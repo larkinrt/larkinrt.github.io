@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="This has been a very challenging beginning. I’ve started learning emacs in order to better work on my writing flow. I am borrowing heavily from Dr. Kieran Healy’s personal website in order to find use">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning Emacs">
+<meta property="og:url" content="https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/index.html">
+<meta property="og:site_name" content="Rickey T. Larkin, Jr.">
+<meta property="og:description" content="This has been a very challenging beginning. I’ve started learning emacs in order to better work on my writing flow. I am borrowing heavily from Dr. Kieran Healy’s personal website in order to find use">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-11T00:30:14.000Z">
+<meta property="article:modified_time" content="2023-03-11T01:02:06.892Z">
+<meta property="article:author" content="Rickey T. Larkin, Jr.">
+<meta property="article:tag" content="technology, writing">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/~larkinrt/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/~larkinrt/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/~larkinrt/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Learning Emacs</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/~larkinrt/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/~larkinrt/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/~larkinrt/">Home</a></li>
+         
+          <li><a href="/~larkinrt/about/">About</a></li>
+         
+          <li><a href="/~larkinrt/archives/">Writing</a></li>
+         
+          <li><a href="/~larkinrt/cv/rickey-larkin-cv.pdf">CV</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/~larkinrt/2020/08/25/teaching-philosophy/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&text=Learning Emacs"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&is_video=false&description=Learning Emacs"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Learning Emacs&body=Check out this article: https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&name=Learning Emacs&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&t=Learning Emacs"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Learning Emacs
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Rickey T. Larkin, Jr.</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-03-11T00:30:14.000Z" itemprop="datePublished">2023-03-11</time>
+        
+        (Updated: <time datetime="2023-03-11T01:02:06.892Z" itemprop="dateModified">2023-03-11</time>)
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/~larkinrt/tags/technology-writing/" rel="tag">technology, writing</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>This has been a very challenging beginning. I’ve started learning emacs in order to better work on my writing flow. I am borrowing heavily from <a target="_blank" rel="noopener" href="https://kieranhealy.org/resources/">Dr. Kieran Healy’s personal website</a> in order to find useful resources for working with emacs (specifically with the goal of writing academic papers).</p>
+<p>I’m using <a href="doomemacs.org">Doom Emacs</a>, which has its own learning curves outside of regular emacs. That said, I think the overall set-up is nice. I don’t want to spend <em>even more</em> time playing with tools. I tend to revert to those sorts of things when I don’t want to write.</p>
+<p>Doom emacs, at least, gives a great starting point. And I am liking evil mode, although that is itself a learning curve. Using the <a target="_blank" rel="noopener" href="https://emacsformacosx.com/">emacs-mac</a> package via homebrew has eased that a little with excellent menu bars.</p>
+<p>So far the main issue I had was activating visual line mode in org-mode. This was accomplished by inserting the following command <em>at the top</em> of the doom.d&#x2F;init.el file:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(setq evil-respect-visual-line-mode t)</span><br></pre></td></tr></table></figure>
+<p>Figuring that out took far too long. ChatGPT was useless, it gave me 4 different answers to the problem and mostly blamed emacs-mac. The solution was hidden in the doom emacs discord and a reddit post.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/~larkinrt/">Home</a></li>
+         
+          <li><a href="/~larkinrt/about/">About</a></li>
+         
+          <li><a href="/~larkinrt/archives/">Writing</a></li>
+         
+          <li><a href="/~larkinrt/cv/rickey-larkin-cv.pdf">CV</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&text=Learning Emacs"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&is_video=false&description=Learning Emacs"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Learning Emacs&body=Check out this article: https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&title=Learning Emacs"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&name=Learning Emacs&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://www2.hawaii.edu/~larkinrt/2023/03/11/learning-emacs/&t=Learning Emacs"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    CC BY 4.0
+    
+    
+    2020-2023
+    Rickey T. Larkin, Jr.
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/~larkinrt/">Home</a></li>
+         
+          <li><a href="/~larkinrt/about/">About</a></li>
+         
+          <li><a href="/~larkinrt/archives/">Writing</a></li>
+         
+          <li><a href="/~larkinrt/cv/rickey-larkin-cv.pdf">CV</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/~larkinrt/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/~larkinrt/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/~larkinrt/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/~larkinrt/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/~larkinrt/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/~larkinrt/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
